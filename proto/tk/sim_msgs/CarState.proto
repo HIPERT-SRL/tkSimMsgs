@@ -1,0 +1,24 @@
+/// First non-comment line must define using the proto3 syntax.
+syntax = "proto3";
+
+/// Define the package name we are using
+package tk.sim_msgs;
+
+/// Import common message definitions
+import "gz/msgs/header.proto";
+
+// message describing vehicle state
+message CarState
+{
+    gz.msgs.Header header = 1;
+    float brake = 2;                    // brake feedback (%) [0-1]
+    float throttle = 3;                 // throttle feedback (%) [0-1]
+    float steer_angle = 4;              // steer angle feedback (rad)
+    float wheel_angle = 5;              // wheel angle feedback (rad)
+    float rpm = 6;                      // engine rotations (rpm)
+    float gear = 7;                     // current gear
+    float gear_state = 8;               // gear state
+    float park_brake = 9;               // park brake state
+    float speed = 10;                   // speed (m/s)
+    repeated float wheel_speeds = 11;   // wheel speeds (m/s)
+}
