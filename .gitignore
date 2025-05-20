@@ -3,3 +3,5 @@ build.meta
 .build/
 .build.meta
 .cache/
+install/
+log/
