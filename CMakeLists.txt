@@ -14,11 +14,19 @@ if(GZ_VERSION STREQUAL "harmonic")
     find_package(gz-transport13 REQUIRED)
     find_package(gz-msgs10 REQUIRED)
 
-    set(GZ_TARGET_PREFIX gz)
     set(GZ_MSGS_VER ${gz-msgs10_VERSION_MAJOR})
     set(GZ_TRANSPORT_VER ${gz-transport13_VERSION_MAJOR})
 
     message(STATUS "Compiling against Gazebo Harmonic")
+elseif(GZ_VERSION STREQUAL "ionic")
+    # Harmonic
+    find_package(gz-transport14 REQUIRED)
+    find_package(gz-msgs11 REQUIRED)
+
+    set(GZ_MSGS_VER ${gz-msgs11_VERSION_MAJOR})
+    set(GZ_TRANSPORT_VER ${gz-transport14_VERSION_MAJOR})
+
+    message(STATUS "Compiling against Gazebo Ionic")
 else()
     message(FATAL_ERROR "This branch is only compatible with Gazebo Harmonic forward.")
 endif()
@@ -40,5 +48,5 @@ gz_msgs_generate_messages(
     # List of proto files to process
     MSGS_PROTOS ${MSGS_PROTOS}
     # Depenency on gz-msgs
-    DEPENDENCIES ${GZ_TARGET_PREFIX}-msgs${GZ_MSGS_VER}::${GZ_TARGET_PREFIX}-msgs${GZ_MSGS_VER}
+    DEPENDENCIES gz-msgs${GZ_MSGS_VER}::gz-msgs${GZ_MSGS_VER}
 )
