@@ -1,0 +1,16 @@
+/// First non-comment line must define using the proto3 syntax.
+syntax = "proto3";
+
+/// Define the package name we are using
+package tk.sim_msgs;
+
+/// Import common message definitions
+import "gz/msgs/header.proto";
+
+// message used to control a vehicle
+message SwerveControl
+{
+  gz.msgs.Header header      = 1;
+  repeated float wheel_speeds = 2; // wheel speeds (m/s)
+  repeated float wheel_angles = 3; // wheel angles (rad)
+}

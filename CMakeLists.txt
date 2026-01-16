@@ -35,6 +35,7 @@ endif()
 set(MSGS_PROTOS
     ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/CarControl.proto
     ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/CarState.proto
+    ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/SwerveControl.proto
 )
 
 # Call 'gz_msgs_generate_messages()' to process the .proto files
