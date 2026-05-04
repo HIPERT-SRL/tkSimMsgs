@@ -1,0 +1,17 @@
+/// First non-comment line must define using the proto3 syntax.
+syntax = "proto3";
+
+/// Define the package name we are using
+package tk.sim_msgs;
+
+/// Import common message definitions
+import "gz/msgs/header.proto";
+
+// message describing wheels state
+message TransmissionState
+{
+  gz.msgs.Header header             = 1;  // header data
+  float          current_gear_ratio = 2;
+  bool           is_shifting        = 3;
+  float          shift_progress     = 4;
+}
