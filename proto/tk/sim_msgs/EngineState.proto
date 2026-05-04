@@ -1,0 +1,28 @@
+/// First non-comment line must define using the proto3 syntax.
+syntax = "proto3";
+
+/// Define the package name we are using
+package tk.sim_msgs;
+
+/// Import common message definitions
+import "gz/msgs/header.proto";
+
+// message describing wheels state
+message EngineState
+{
+  enum Type
+  {
+    ICE      = 0;
+    ELECTRIC = 1;
+  }
+
+  gz.msgs.Header header                  = 1;  // header data
+  Type           type                    = 2;
+  float          generated_power         = 3;
+  float          inertia                 = 4;
+  bool           ignition                = 5;
+  float          output_torque           = 6;
+  float          output_inertia          = 7;
+  float          output_angular_velocity = 8;
+  float          output_rpm              = 9;
+}

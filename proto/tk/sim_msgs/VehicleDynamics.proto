@@ -1,0 +1,24 @@
+/// First non-comment line must define using the proto3 syntax.
+syntax = "proto3";
+
+/// Define the package name we are using
+package tk.sim_msgs;
+
+/// Import common message definitions
+import "gz/msgs/header.proto";
+import "tk/sim_msgs/ClutchState.proto";
+import "tk/sim_msgs/EngineState.proto";
+import "tk/sim_msgs/DifferentialState.proto";
+import "tk/sim_msgs/TransmissionState.proto";
+import "tk/sim_msgs/WheelState.proto";
+
+// message describing wheels state
+message VehicleDynamics
+{
+  gz.msgs.Header             header        = 1;  // header data
+  EngineState                engine        = 2;  // list of wheel state msgs
+  ClutchState                clutch        = 3;
+  TransmissionState          transmission  = 4;
+  repeated DifferentialState differentials = 5;  // list of wheel state msgs
+  repeated WheelState        wheels        = 6;  // list of wheel state msgs
+}

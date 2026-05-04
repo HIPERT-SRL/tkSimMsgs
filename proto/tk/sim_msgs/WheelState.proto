@@ -1,0 +1,23 @@
+/// First non-comment line must define using the proto3 syntax.
+syntax = "proto3";
+
+/// Define the package name we are using
+package tk.sim_msgs;
+
+/// Import common message definitions
+import "gz/msgs/header.proto";
+
+// message describing wheels state
+message WheelState
+{
+  gz.msgs.Header header             = 1;  // header data 
+  float          angle              = 2;  // wheel angle feedback [rad]
+  float          speed              = 3;  // wheel speed [m/s]
+  float          motor_torque       = 4;  // 
+  float          brake_torque       = 5;  //
+  float          load               = 6;  //
+  float          longitudinal_slip  = 7;  // wheel slip in the rolling direction. Acceleration slip is negative, braking slip is positive
+  float          longitudinal_speed = 8;  //
+  float          lateral_slip       = 9;  // wheel slip in the sideways direction. Acceleration slip is negative, braking slip is positive
+  float          lateral_speed      = 10; //
+}

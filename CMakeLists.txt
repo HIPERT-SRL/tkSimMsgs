@@ -35,6 +35,12 @@ endif()
 set(MSGS_PROTOS
     ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/CarControl.proto
     ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/CarState.proto
+    ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/EngineState.proto
+    ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/ClutchState.proto
+    ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/TransmissionState.proto
+    ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/DifferentialState.proto
+    ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/WheelState.proto
+    ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/VehicleDynamics.proto
     ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/SwerveControl.proto
 )
 
