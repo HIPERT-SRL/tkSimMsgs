@@ -21,4 +21,5 @@ message CarState
     float park_brake = 9;               // park brake state
     float speed = 10;                   // speed (m/s)
     repeated float wheel_speeds = 11;   // wheel speeds (m/s) TODO: REMOVE, moved to WheelsState
+    float fuel_level = 12;              // fuel level (%) [0-1]
 }
