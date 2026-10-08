@@ -20,4 +20,5 @@ message WheelState
   float          longitudinal_speed = 8;  //
   float          lateral_slip       = 9;  // wheel slip in the sideways direction. Acceleration slip is negative, braking slip is positive
   float          lateral_speed      = 10; //
+  string         ground_name        = 11; //
 }
