@@ -1,0 +1,23 @@
+/// First non-comment line must define using the proto3 syntax.
+syntax = "proto3";
+
+/// Define the package name we are using
+package tk.sim_msgs;
+
+/// Import common message definitions
+import "gz/msgs/header.proto";
+import "gz/msgs/annotated_oriented_3d_box.proto";
+import "gz/msgs/twist.proto";
+
+message DetectionBox
+{
+    gz.msgs.Header header = 1;
+    gz.msgs.AnnotatedOriented3DBox annotated_box = 2;
+    gz.msgs.Twist twist = 3;
+}
+
+message DetectionBox_V
+{
+    gz.msgs.Header header = 1;
+    repeated DetectionBox detection_box = 2;
+}

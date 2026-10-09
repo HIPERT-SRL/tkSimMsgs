@@ -42,6 +42,7 @@ set(MSGS_PROTOS
     ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/WheelState.proto
     ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/VehicleDynamics.proto
     ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/SwerveControl.proto
+    ${CMAKE_CURRENT_SOURCE_DIR}/proto/tk/sim_msgs/DetectionBox.proto
 )
 
 # Call 'gz_msgs_generate_messages()' to process the .proto files
