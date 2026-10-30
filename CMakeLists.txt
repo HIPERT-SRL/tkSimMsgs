@@ -27,6 +27,15 @@ elseif(GZ_VERSION STREQUAL "ionic")
     set(GZ_TRANSPORT_VER ${gz-transport14_VERSION_MAJOR})
 
     message(STATUS "Compiling against Gazebo Ionic")
+elseif(GZ_VERSION STREQUAL "jetty")
+    # from Jetty packages and targets don't have the major version in the name
+    find_package(gz-transport 15 REQUIRED)
+    find_package(gz-msgs 12 REQUIRED)
+
+    set(GZ_MSGS_VER "")
+    set(GZ_TRANSPORT_VER "")
+
+    message(STATUS "Compiling against Gazebo Jetty")
 else()
     message(FATAL_ERROR "This branch is only compatible with Gazebo Harmonic forward.")
 endif()
